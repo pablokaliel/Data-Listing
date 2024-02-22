@@ -1,8 +1,7 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from "lucide-react";
 
-import nivoLogo from '../assets/logo-nivo.svg'
-import { Badge } from './ui/bagde'
-
+import nivoLogo from "../assets/logo-nivo.svg";
+import { Badge } from "./ui/bagde";
 
 export function Header() {
   return (
@@ -11,7 +10,7 @@ export function Header() {
         <div className="flex items-center gap-2.5">
           <img src={nivoLogo} alt="nivo.video" />
 
-          <Badge>BETA</Badge>
+          <Badge>NextList</Badge>
         </div>
 
         <svg
@@ -37,7 +36,7 @@ export function Header() {
             alt=""
           />
 
-          <span className="text-sm font-medium text-zinc-100">Rocketseat</span>
+          <span className="text-sm font-medium text-zinc-100">Listing</span>
 
           <Badge variant="primary">PRO</Badge>
 
@@ -61,7 +60,7 @@ export function Header() {
         </svg>
 
         <div className="flex items-center gap-2.5">
-          <span className="text-sm font-medium text-zinc-100">Ignite</span>
+          <span className="text-sm font-medium text-zinc-100">ReactJS</span>
 
           <ChevronDown className="text-zinc-600 size-4" />
         </div>
@@ -69,16 +68,16 @@ export function Header() {
 
       <div className="flex items-center gap-3">
         <div className="flex flex-col items-end gap-0.5">
-          <span className="text-sm font-medium">Diego Fernandes</span>
-          <span className="text-xs text-zinc-400">diego@nivo.video</span>
+          <span className="text-sm font-medium">Pablo Kaliel</span>
+          <span className="text-xs text-zinc-400">user@example.com</span>
         </div>
         <img
-          src="https://github.com/diego3g.png"
+          src="https://github.com/pablokaliel.png"
           className="size-8 rounded-full"
           alt=""
         />
         <ChevronDown className="size-4 text-zinc-600" />
       </div>
     </div>
-  )
+  );
 }
