@@ -3,14 +3,7 @@ import { Header } from "./components/header";
 import { Tabs } from "./components/tabs";
 import { Button } from "./components/ui/button";
 import { Control, Input } from "./components/ui/input";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./components/ui/table";
 import { Pagination } from "./components/pagination";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
@@ -31,21 +24,24 @@ export interface Tag {
   amountOfVideos: number;
   id: string;
 }
+
 export function App() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const urlFilter = searchParams.get('filter') ?? ''
+
+  const urlFilter = searchParams.get("filter") ?? "";
   const [filter, setFilter] = useState(urlFilter);
 
   function handleFilter() {
-    setSearchParams(params => {
-      params.set("page",'1')
-      params.set('filter',filter)
-      return params
+    setSearchParams((params) => {
+      params.set("page", "1");
+      params.set("filter", filter);
+      return params;
     });
   }
 
   const debouncedFilter = useDebounceValue(filter, 1000);
   const page = searchParams.get("page") ? Number(searchParams.get("page")) : 1;
+
   useEffect(() => {
     setSearchParams((params) => {
       params.set("page", "1");
@@ -87,8 +83,6 @@ export function App() {
         </div>
 
         <div className="flex items-center justify-between">
-  
-
           <div className="flex items-center justify-between">
             <Input variant="filter">
               <Search className="size-3" />
@@ -119,6 +113,7 @@ export function App() {
               <TableHead>Amount of videos</TableHead>
             </TableRow>
           </TableHeader>
+
           <TableBody>
             {tagsResponse?.data.map((tag) => {
               return (
