@@ -39,15 +39,7 @@ export function App() {
     });
   }
 
-  const debouncedFilter = useDebounceValue(filter, 1000);
   const page = searchParams.get("page") ? Number(searchParams.get("page")) : 1;
-
-  useEffect(() => {
-    setSearchParams((params) => {
-      params.set("page", "1");
-      return params;
-    });
-  }, [debouncedFilter, setSearchParams]);
 
   const { data: tagsResponse, isLoading } = useQuery<TagResponse>({
     queryFn: async () => {
